@@ -16,10 +16,10 @@ public class Location {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@Column(nullable = false)
+	@Column
 	private double latitude;
 
-	@Column(nullable = false)
+	@Column
 	private double longitude;
 
 	@OneToOne(fetch = FetchType.LAZY)

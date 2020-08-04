@@ -4,14 +4,11 @@ import java.util.List;
 
 import org.codejudge.sb.model.Driver;
 import org.codejudge.sb.model.Message;
-import org.springframework.stereotype.Component;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-@Component
 public class ModelJSONUtility {
 
 	public ObjectNode nearByCabJSONResponse(List<Driver> available_cabs) {
@@ -33,11 +30,10 @@ public class ModelJSONUtility {
 		return rootNode;
 	}
 
-	public ObjectNode messageJSONResponse(Message message) {
+	public ObjectNode messageJSONResponse(Message message,String status) {
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode rootNode = mapper.createObjectNode();
-		((ObjectNode) rootNode).put("status", String.valueOf(message.getStatus()));
-		((ObjectNode) rootNode).put("reason", String.valueOf(message.getReason()));
+		((ObjectNode) rootNode).put("status", status);
 		return (ObjectNode) rootNode;
 	}
 }

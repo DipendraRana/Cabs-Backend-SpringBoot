@@ -3,7 +3,6 @@ package org.codejudge.sb.Utility;
 import java.util.List;
 
 import org.codejudge.sb.model.Driver;
-import org.codejudge.sb.model.Message;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -30,7 +29,7 @@ public class ModelJSONUtility {
 		return rootNode;
 	}
 
-	public ObjectNode messageJSONResponse(Message message,String status) {
+	public ObjectNode messageJSONResponse(String status) {
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode rootNode = mapper.createObjectNode();
 		((ObjectNode) rootNode).put("status", status);

@@ -16,7 +16,7 @@ public class LocationServiceImpl implements LocationService {
 	DriverRepository driverRepository;
 
 	@Override
-	public Location saveLocation(Location location,int driverID) throws Exception {
+	public Location saveLocation(Location location,int driverID) {
 		location.setDriver(driverRepository.getOne(driverID));
 		return locationRepository.save(location);
 	}

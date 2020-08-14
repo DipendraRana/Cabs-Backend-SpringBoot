@@ -1,12 +1,14 @@
 package org.codejudge.sb.model;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Message {
 
 	private String status;
 	private String reason;
+
+	public Message(String status, String reason) {
+		this.status = status;
+		this.reason = reason;
+	}
 
 	public String getStatus() {
 		return status;

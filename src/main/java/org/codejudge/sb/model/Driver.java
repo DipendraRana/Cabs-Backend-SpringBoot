@@ -31,7 +31,7 @@ public class Driver {
 	@Column(nullable=false,unique=true)
 	private String car_number;
 	
-	@OneToOne(mappedBy="driver",cascade=CascadeType.ALL,fetch=FetchType.LAZY,optional=false)
+	@OneToOne(mappedBy="driver",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private Location location;
 	
 	public int getId() {

@@ -7,8 +7,8 @@ import org.codejudge.sb.model.Location;
 
 public interface DriverService {
 	
-	Driver saveDriver(Driver driver) throws Exception;
+	Driver saveDriver(Driver driver);
 	
-	List<Driver> getAllNearestDriver(Location location) throws Exception;
+	List<Driver> getAllNearestDriver(Location location);
 
 }

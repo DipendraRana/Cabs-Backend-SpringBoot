@@ -21,12 +21,12 @@ public class DriverServiceImpl implements DriverService {
 	private LocationRepository locationRepository;
 
 	@Override
-	public Driver saveDriver(Driver driver) throws Exception {
+	public Driver saveDriver(Driver driver) {
 		return driverRepository.save(driver);
 	}
 
 	@Override
-	public List<Driver> getAllNearestDriver(Location userLocation) throws Exception {
+	public List<Driver> getAllNearestDriver(Location userLocation) {
 		List<Driver> nearestDrivers = new LinkedList<>();
 		List<Location> allDriverLocation = locationRepository.findAll();
 		for (Location driverLocation : allDriverLocation) {
